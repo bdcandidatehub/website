@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CandidateHub is the AI Operating System for Talent. Manage talent from hire to retire with Markis, your AI teammate.">
+    <title>CandidateHub | The AI Operating System for Talent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png" type="image/png">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="site-header glass-panel">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.png" alt="CandidateHub Logo" class="logo-img">
+            </div>
+            <nav class="main-nav">
+                <a href="#markis">Meet Markis</a>
+                <a href="#platform">Platform</a>
+                <a href="#outcomes">Outcomes</a>
+                <a href="#why-us">Why Us</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-primary" onclick="alert('Demo Booking Opened')">Book a Demo</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero hero-centered relative overflow-hidden">
+        <!-- Dynamic Living AI Orb -->
+        <div class="orb-container">
+            <div class="living-orb layer-1"></div>
+            <div class="living-orb layer-2"></div>
+            <div class="living-orb layer-3"></div>
+        </div>
+
+        <div class="container relative z-10 text-center">
+            <div class="hero-content">
+                <h1 class="fade-in-up" style="animation-delay: 0.1s;">The <span style="color: var(--accent-yellow);">AI Operating System</span> for Talent</h1>
+                <p class="hero-sub fade-in-up" style="animation-delay: 0.2s; margin-left: auto; margin-right: auto;">
+                    CandidateHub helps HR teams engage, hire, develop, and retain talent from hire to retire with Markis, your AI talent strategist.
+                </p>
+                <div class="hero-ctas justify-center fade-in-up" style="animation-delay: 0.3s;">
+                    <a href="#demo" class="btn btn-primary btn-large">Book a Demo</a>
+                    <a href="#markis" class="btn btn-secondary btn-large">Meet Markis</a>
+                </div>
+            </div>
+
+            <!-- Hero Visual: AI Command Input -->
+            <div class="hero-visual-centered fade-in-up" style="animation-delay: 0.4s;">
+                <div class="search-interface glass-panel">
+                    <div class="search-input-area">
+                        <div class="input-sparkle">
+                            <svg viewBox="0 0 24 24" fill="none" class="sparkle-icon"><path d="M12 2l2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6z" fill="currentColor"/></svg>
+                        </div>
+                        <div class="input-wrapper transparent-input">
+                            <div id="typewriter-text" class="typewriter text-large"></div>
+                            <span class="cursor">|</span>
+                        </div>
+                        <button class="send-btn micro-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quick Action Pills -->
+                <div class="quick-actions fade-in-up" style="animation-delay: 0.5s;">
+                    <button class="pill-btn">Talent Journeys</button>
+                    <button class="pill-btn">Turnover Risk</button>
+                    <button class="pill-btn">Workforce Planning</button>
+                    <button class="pill-btn">Candidate Nurturing</button>
+                    <button class="pill-btn">Internal Mobility</button>
+                    <button class="pill-btn">Hiring Forecasts</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Meet Markis -->
+    <section id="markis" class="section markis-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Meet <span class="text-gradient">Markis</span></h2>
+                <p class="section-subtitle">
+                    The intelligence layer behind CandidateHub. Markis dynamically shifts context to act as multiple AI roles depending on the problem you're solving.
+                </p>
+            </div>
+            
+            <div class="markis-grid">
+                <!-- Cards -->
+                <div class="glass-card square-module">
+                    <div class="corner-bracket top-left"></div>
+                    <div class="corner-bracket bottom-right"></div>
+                    <div class="card-content">
+                        <div class="card-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" class="icon"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="card-text">
+                            <h3>Talent Intelligence Strategist</h3>
+                            <p>Analyzes talent pools, market trends, and organizational needs to optimize strategy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card square-module">
+                    <div class="corner-bracket top-left"></div>
+                    <div class="corner-bracket bottom-right"></div>
+                    <div class="card-content">
+                        <div class="card-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" class="icon"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="card-text">
+                            <h3>Journey Architect</h3>
+                            <p>Designs automated, multi-channel candidate and employee journeys to drive engagement.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card square-module">
+                    <div class="corner-bracket top-left"></div>
+                    <div class="corner-bracket bottom-right"></div>
+                    <div class="card-content">
+                        <div class="card-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" class="icon"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="card-text">
+                            <h3>Recruiting Coordinator</h3>
+                            <p>Handles scheduling, follow-ups, initial screenings, and routine candidate communications.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card square-module">
+                    <div class="corner-bracket top-left"></div>
+                    <div class="corner-bracket bottom-right"></div>
+                    <div class="card-content">
+                        <div class="card-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" class="icon"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div class="card-text">
+                            <h3>Employee Retention Advisor</h3>
+                            <p>Identifies flight risks and prompts timely interventions to keep your top talent.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row 2 -->
+                <div class="glass-card square-module">
+                    <div class="corner-bracket top-left"></div>
+                    <div class="corner-bracket bottom-right"></div>
+                    <div class="card-content">
+                        <div class="card-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" class="icon"><path d="M18 20V10M12 20V4M6 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="18" cy="10" r="2" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="4" r="2" stroke="currentColor" stroke-width="2"/><circle cx="6" cy="14" r="2" stroke="currentColor" stroke-width="2"/></svg>
+                        </div>
+                        <div class="card-text">
+                            <h3>Workforce Planning Analyst</h3>
+                            <p>Forecasts staffing needs across locations based on historical data and seasonality.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card square-module">
+                    <div class="corner-bracket top-left"></div>
+                    <div class="corner-bracket bottom-right"></div>
+                    <div class="card-content">
+                        <div class="card-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" class="icon"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 7a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="card-text">
+                            <h3>Candidate Engagement Specialist</h3>
+                            <p>Nurtures declined or passive candidates with relevant updates and career opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card square-module">
+                    <div class="corner-bracket top-left"></div>
+                    <div class="corner-bracket bottom-right"></div>
+                    <div class="card-content">
+                        <div class="card-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" class="icon"><path d="M12 15l-3 3m0 0l-3-3m3 3V11M12 9l3-3m0 0l3 3m-3-3v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="card-text">
+                            <h3>Internal Mobility Advisor</h3>
+                            <p>Matches existing employees to new roles, fostering long-term career growth internally.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card square-module">
+                    <div class="corner-bracket top-left"></div>
+                    <div class="corner-bracket bottom-right"></div>
+                    <div class="card-content">
+                        <div class="card-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" class="icon"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="card-text">
+                            <h3>Hiring Operations Manager</h3>
+                            <p>Oversees the end-to-end recruitment process, ensuring compliance and efficiency.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: From Hire to Retire -->
+    <section id="platform" class="section lifecycle-section relative overflow-hidden">
+        <div class="glow-orb hero-glow-2" style="top: 50%; left: -10%;"></div>
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Manage Talent <span class="text-gradient">From Hire to Retire</span></h2>
+                <p class="section-subtitle">
+                    CandidateHub is not just for recruiting. Manage the entire, complex lifecycle through one unified operating system.
+                </p>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-nodes">
+                    <div class="timeline-node">
+                        <div class="node-dot"></div>
+                        <div class="node-content glass-panel">
+                            <h4>Attraction</h4>
+                            <p>Build talent pools before you need them.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-node">
+                        <div class="node-dot"></div>
+                        <div class="node-content glass-panel">
+                            <h4>Hiring</h4>
+                            <p>Streamline complex, high-volume processes.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-node">
+                        <div class="node-dot"></div>
+                        <div class="node-content glass-panel">
+                            <h4>Onboarding</h4>
+                            <p>Automate day-one readiness at scale.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-node">
+                        <div class="node-dot"></div>
+                        <div class="node-content glass-panel">
+                            <h4>Development</h4>
+                            <p>Map skills to future business needs.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-node">
+                        <div class="node-dot"></div>
+                        <div class="node-content glass-panel">
+                            <h4>Retention</h4>
+                            <p>Predict flight risks and build loyalty.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-node">
+                        <div class="node-dot"></div>
+                        <div class="node-content glass-panel">
+                            <h4>Internal Mobility</h4>
+                            <p>Promote from within effortlessly.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-node">
+                        <div class="node-dot"></div>
+                        <div class="node-content glass-panel">
+                            <h4>Exit / Alumni</h4>
+                            <p>Keep the door open for boomerang hires.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Built for Mid-Market -->
+    <section class="section midmarket-section">
+        <div class="container">
+            <div class="split-layout">
+                <div class="split-content">
+                    <h2 class="section-title">Built for <span class="text-gradient">Mid-Market</span> Complexity</h2>
+                    <p class="section-subtitle text-left">
+                        Manufacturing and retail companies face unique, systemic challenges. We built CandidateHub to give smaller HR teams enterprise-grade capabilities without the enterprise complexity.
+                    </p>
+                    <ul class="challenge-list">
+                        <li><span class="icon-check"></span> High-volume hiring across locations</li>
+                        <li><span class="icon-check"></span> Managing seasonal workforce planning</li>
+                        <li><span class="icon-check"></span> Reducing sky-high turnover rates</li>
+                        <li><span class="icon-check"></span> Eliminating disconnected HR systems</li>
+                        <li><span class="icon-check"></span> Automating manual, paper-based processes</li>
+                    </ul>
+                </div>
+                <div class="split-visual">
+                    <div class="dashboard-widget glass-panel relative">
+                        <div class="glow-orb" style="top: -20px; right: -20px; width: 150px; height: 150px;"></div>
+                        <div class="widget-header">
+                            <h4>Operations Command</h4>
+                        </div>
+                        <div class="widget-metrics">
+                            <div class="metric-box">
+                                <span class="metric-label">Active Locations</span>
+                                <span class="metric-value text-gradient">24</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">Seasonal Shift</span>
+                                <span class="metric-value text-positive">Ready</span>
+                            </div>
+                            <div class="metric-box full-width">
+                                <span class="metric-label">Turnover Risk Alert</span>
+                                <div class="risk-bar">
+                                    <div class="risk-level" style="width: 15%;"></div>
+                                </div>
+                                <span class="metric-sub">Reduced by 40% this quarter</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Key Outcomes -->
+    <section id="outcomes" class="section outcomes-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Transform Your <span class="text-gradient">Operations</span></h2>
+            </div>
+            <div class="outcomes-grid">
+                <div class="outcome-card glass-panel text-center">
+                    <div class="outcome-stat">85%</div>
+                    <h4>Reduction in Manual Work</h4>
+                    <p>Automate scheduling, follow-ups, and repetitive tasks with Markis.</p>
+                </div>
+                <div class="outcome-card glass-panel text-center">
+                    <div class="outcome-stat">3x</div>
+                    <h4>Higher Response Rates</h4>
+                    <p>Engage candidates through personalized, multi-channel journeys.</p>
+                </div>
+                <div class="outcome-card glass-panel text-center">
+                    <div class="outcome-stat">40%</div>
+                    <h4>Lower Turnover Risk</h4>
+                    <p>Identify flight risks before they leave with proactive interventions.</p>
+                </div>
+                <div class="outcome-card glass-panel text-center">
+                    <div class="outcome-stat">+60%</div>
+                    <h4>Internal Mobility</h4>
+                    <p>Seamlessly deploy existing talent to new roles and locations.</p>
+                </div>
+                <div class="outcome-card glass-panel text-center">
+                    <div class="outcome-stat">100%</div>
+                    <h4>Visibility</h4>
+                    <p>Gain real-time insights into your entire workforce pipeline.</p>
+                </div>
+                <div class="outcome-card glass-panel text-center">
+                    <div class="outcome-stat">2x</div>
+                    <h4>Better Retention</h4>
+                    <p>Keep your critical frontline and operations talent engaged longer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Why CandidateHub -->
+    <section id="why-us" class="section why-section relative overflow-hidden">
+        <div class="glow-orb hero-glow-1" style="top: 20%; right: -10%;"></div>
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">The System That <span class="text-gradient">Connects Everything</span></h2>
+                <p class="section-subtitle">
+                    Stop settling for fragmented data. CandidateHub brings the intelligence layer your legacy systems are missing.
+                </p>
+            </div>
+            
+            <div class="connection-diagram">
+                <div class="diagram-node secondary-node glass-panel"><span>ATS Systems</span></div>
+                <div class="diagram-line line-left"></div>
+                
+                <div class="diagram-node secondary-node glass-panel"><span>HRIS Systems</span></div>
+                <div class="diagram-line line-top"></div>
+                
+                <div class="diagram-node primary-node glass-panel glow-heavy">
+                    <img src="logo.png" alt="CandidateHub Logo" class="logo-img">
+                    <span>CandidateHub</span>
+                </div>
+                
+                <div class="diagram-line line-bottom"></div>
+                <div class="diagram-node secondary-node glass-panel"><span>Point Solutions</span></div>
+                
+                <div class="diagram-line line-right"></div>
+                <div class="diagram-node secondary-node glass-panel"><span>Generic AI</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Testimonial -->
+    <section class="section testimonial-section">
+        <div class="container">
+            <h2 class="section-title text-center" style="margin-bottom: 3rem;">Trusted by <span class="text-gradient">Leaders</span></h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card glass-panel">
+                    <div class="quote-icon">"</div>
+                    <p class="quote">CandidateHub transformed our seasonal hiring. We used to drown in spreadsheets across 30 locations. Now, Markis orchestrates the entire flow, saving my team dozens of hours a week.</p>
+                    <div class="quote-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <h5>Sarah Jenkins</h5>
+                            <span>VP of Talent, Apex Manufacturing</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-panel">
+                    <div class="quote-icon">"</div>
+                    <p class="quote">The shift from just recruiting to full lifecycle management was a game-changer. Being able to predict turnover and move people internally has saved us hundreds of thousands in hiring costs.</p>
+                    <div class="quote-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h5>Marcus Thorne</h5>
+                            <span>HR Director, Regional Retailers Co.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section cta-section relative">
+        <div class="glow-orb" style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; opacity: 0.2; background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);"></div>
+        <div class="container text-center relative z-10 glass-panel final-cta-panel">
+            <h2 class="section-title">Your Talent Strategy Needs an <span class="text-gradient">Operating System.</span></h2>
+            <p class="section-subtitle">
+                See how CandidateHub and Markis can help you manage talent from hire to retire.
+            </p>
+            <a href="#demo" class="btn btn-primary btn-large glow-btn" style="margin-top: 1.5rem;">Book a Demo</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="logo.png" alt="CandidateHub Logo" class="logo-img" style="height: 24px; width: auto;">
+                        <span>CandidateHub</span>
+                    </div>
+                    <p>The AI Operating System for Talent.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Platform</h4>
+                        <a href="#">Markis AI</a>
+                        <a href="#">Hire</a>
+                        <a href="#">Retire</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Legal</h4>
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 CandidateHub. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
