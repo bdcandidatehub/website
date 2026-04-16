@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+gdocument.addEventListener('DOMContentLoaded', () => {
 
     // --- Typewriter Effect for Hero Input ---
     const prompts = [
@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let charIndex = 0;
     let isDeleting = false;
     let typingSpeed = 50;
-    
+
     // Typing state machine
     function typeEffect() {
-        if(!typewriterEl) return;
-        
+        if (!typewriterEl) return;
+
         const currentPrompt = prompts[promptIndex];
-        
+
         if (isDeleting) {
             // Delete text
             typewriterEl.textContent = currentPrompt.substring(0, charIndex - 1);
@@ -74,17 +74,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 entry.target.style.transform = 'translateY(0)';
                 observer.unobserve(entry.target);
             }
+
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainNav = document.getElementById('mainNav');
+            if (mobileMenuBtn && mainNav) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mainNav.classList.toggle('mobile-active');
+                });
+            }
+
         });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.square-module, .outcome-card, .testimonial-card, .split-content, .dashboard-widget, .timeline-node');
-    
+    const animatedElements = document.querySelectorAll('.square-module, .outcome-card, .testimonial-card, .split-content, .dashboard-widget, .timeline-node, .fade-in-up, .light-card');
+
     animatedElements.forEach((el, index) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1)';
         el.style.transitionDelay = `${(index % 3) * 0.1}s`;
         observer.observe(el);
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        if (mobileMenuBtn && mainNav) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mainNav.classList.toggle('mobile-active');
+            });
+        }
+
     });
 
     // Diagram generic animation
@@ -97,6 +115,15 @@ document.addEventListener('DOMContentLoaded', () => {
             node.style.opacity = '1';
             node.style.transform = 'scale(1)';
         }, 1000 + (idx * 200));
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        if (mobileMenuBtn && mainNav) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mainNav.classList.toggle('mobile-active');
+            });
+        }
+
     });
 
     // Smooth Scrolling for anchor links
@@ -107,9 +134,45 @@ document.addEventListener('DOMContentLoaded', () => {
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth'
-                });
-            }
+                
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                    const mainNav = document.getElementById('mainNav');
+                    if(mobileMenuBtn && mainNav) {
+                    mobileMenuBtn.addEventListener('click', () => {
+                        mainNav.classList.toggle('mobile-active');
+                    });
+                }
+
+            });
+    }
+        
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+    if (mobileMenuBtn && mainNav) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('mobile-active');
         });
+    }
+
+});
+
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mainNav = document.getElementById('mainNav');
+if (mobileMenuBtn && mainNav) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mainNav.classList.toggle('mobile-active');
     });
+}
+
+});
+
+
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mainNav = document.getElementById('mainNav');
+if (mobileMenuBtn && mainNav) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mainNav.classList.toggle('mobile-active');
+    });
+}
 
 });

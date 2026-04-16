@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CandidateHub is the AI Operating System for Talent. Manage talent from hire to retire with Markis, your AI teammate.">
-    <title>CandidateHub | The AI Operating System for Talent</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="logo.png" type="image/png">
-</head>
-<body>
+import re
 
-    <!-- Header / Navigation -->
+# 1. Update index.html
+with open('index.html', 'r') as f:
+    html_content = f.read()
+
+header_pattern = re.compile(r'<!-- Header / Navigation -->.*?</header>', re.DOTALL)
+new_header = """<!-- Header / Navigation -->
     <header class="site-header glass-panel">
         <div class="container header-container">
             <div class="logo">
@@ -33,60 +25,13 @@
                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
             </button>
         </div>
-    </header>
+    </header>"""
 
-    <!-- Hero Section -->
-    <section class="hero hero-centered relative overflow-hidden">
-        <!-- Dynamic Living AI Orb -->
-        <div class="orb-container">
-            <div class="living-orb layer-1"></div>
-            <div class="living-orb layer-2"></div>
-            <div class="living-orb layer-3"></div>
-        </div>
+html_content = header_pattern.sub(new_header, html_content)
 
-        <div class="container relative z-10 text-center">
-            <div class="hero-content">
-                <h1 class="fade-in-up" style="animation-delay: 0.1s;">The <span style="color: var(--accent-yellow);">AI Operating System</span> for Talent</h1>
-                <p class="hero-sub fade-in-up" style="animation-delay: 0.2s; margin-left: auto; margin-right: auto;">
-                    CandidateHub helps HR teams engage, hire, develop, and retain talent from hire to retire with Markis, your AI talent strategist.
-                </p>
-                <div class="hero-ctas justify-center fade-in-up" style="animation-delay: 0.3s;">
-                    <a href="/demo" class="btn btn-primary btn-large">Book a Demo</a>
-                    <a href="#markis" class="btn btn-secondary btn-large">Meet Markis</a>
-                </div>
-            </div>
 
-            <!-- Hero Visual: AI Command Input -->
-            <div class="hero-visual-centered fade-in-up" style="animation-delay: 0.4s;">
-                <div class="search-interface glass-panel">
-                    <div class="search-input-area">
-                        <div class="input-sparkle">
-                            <svg viewBox="0 0 24 24" fill="none" class="sparkle-icon"><path d="M12 2l2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6z" fill="currentColor"/></svg>
-                        </div>
-                        <div class="input-wrapper transparent-input">
-                            <div id="typewriter-text" class="typewriter text-large"></div>
-                            <span class="cursor">|</span>
-                        </div>
-                        <button class="send-btn micro-btn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Quick Action Pills -->
-                <div class="quick-actions fade-in-up" style="animation-delay: 0.5s;">
-                    <button class="pill-btn">Talent Journeys</button>
-                    <button class="pill-btn">Turnover Risk</button>
-                    <button class="pill-btn">Workforce Planning</button>
-                    <button class="pill-btn">Candidate Nurturing</button>
-                    <button class="pill-btn">Internal Mobility</button>
-                    <button class="pill-btn">Hiring Forecasts</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 1: The Problem -->
+body_pattern = re.compile(r'<!-- Section 2: Meet Markis -->.*</body>', re.DOTALL)
+new_body = """<!-- Section 1: The Problem -->
     <section id="problem" class="section section-light problem-section">
         <div class="container text-center text-dark" style="max-width: 780px;">
             <h2 class="section-title text-dark">Your ATS tracks candidates. It doesn't convert them.</h2>
@@ -447,5 +392,198 @@
     <script src="main.js"></script>
 </body>
 </html>
+"""
 
-</html>
+html_content = body_pattern.sub(new_body, html_content)
+with open('index.html', 'w') as f:
+    f.write(html_content)
+
+
+# 2. Update styles.css
+with open('styles.css', 'r') as f:
+    css_content = f.read()
+
+new_css_vars = """
+    --text-dark: #0D1117;
+    --text-body: #4A5568;
+    --bg-light: #F8F9FB; /* Light / near-white */
+    --bg-offwhite: #EFF2F6;
+    --brand-blue: #2D7BBF;
+    --brand-dark-blue: #0A1929;
+"""
+css_content = css_content.replace("--transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);", "--transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n" + new_css_vars)
+
+appended_css = """
+
+/* --- New Section Styles --- */
+.section-light { background: var(--bg-light); color: var(--text-dark); }
+.section-offwhite { background: var(--bg-offwhite); color: var(--text-dark); }
+.section-dark-trust { background: var(--brand-dark-blue); color: #fff; }
+.section-brand { background: var(--brand-blue); color: #fff; }
+
+.text-dark { color: var(--text-dark) !important; }
+.text-body { color: var(--text-body) !important; }
+.text-white { color: #fff !important; }
+.text-blue { color: var(--primary) !important; }
+
+.row { display: flex; flex-wrap: wrap; }
+.column { flex: 1; min-width: 250px; }
+.justify-center { justify-content: center; }
+
+.btn-secondary-white {
+    background: #fff;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+.btn-secondary-white:hover {
+    background: var(--bg-offwhite);
+    transform: translateY(-2px);
+}
+
+/* Header & Mobile nav */
+#mainNav.mobile-active {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: rgba(4, 8, 18, 0.95);
+    padding: 1rem;
+    padding-bottom: 2rem;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--border-glass);
+}
+.mobile-menu-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+@media (min-width: 769px) {
+    .mobile-menu-btn { display: none !important; }
+    #mainNav { display: flex !important; }
+}
+@media (max-width: 768px) {
+    .header-actions { display: none; }
+    .mobile-menu-btn { display: block !important; }
+    #mainNav { display: none; }
+}
+
+/* The Problem */
+.problem-stats { margin-top: 4rem; gap: 2rem; }
+.stat-col { padding: 1.5rem; }
+.stat-number { font-size: 3rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; line-height: 1; }
+.stat-label { font-size: 1rem; color: var(--text-body); }
+
+/* Markis */
+.eyebrow { font-variant: small-caps; color: var(--primary); font-weight: 600; letter-spacing: 1px; font-size: 0.9rem; display: block; margin-bottom: 0.5rem; }
+.rule-box { margin-top: 1.5rem; opacity: 0.8; font-size: 0.95rem; }
+.light-card {
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.light-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-color: rgba(45, 123, 191, 0.3);
+}
+.card-icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+.card-icon-circle svg { width: 24px; height: 24px; color: var(--primary); }
+.card-text h3 { font-size: 1.1rem; color: var(--text-dark); margin-bottom: 0.5rem; font-weight: 600; }
+.card-text p { font-size: 0.9rem; margin-top: 0 !important; max-height: unset !important; opacity: 1 !important; }
+
+/* Stack Diagram */
+.stack-diagram { display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 4rem 0 2rem; flex-wrap: wrap; }
+.tier { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+.tier-pill { padding: 1rem 2.5rem; border-radius: 50px; font-weight: 500; font-size: 1.1rem; }
+.grey-pill { background: #e1e4e8; color: var(--text-body); }
+.blue-pill { background: var(--secondary); color: var(--primary); font-size: 1.25rem !important; padding: 1.25rem 3rem; }
+.dark-blue-pill { background: var(--brand-dark-blue); color: #fff; }
+.tier-label { font-size: 0.85rem; color: var(--text-body); font-weight: 500; }
+.arrow { color: #cbd5e1; width: 32px; height: 32px; }
+.stack-note p { font-size: 0.9rem; color: var(--text-body); }
+.font-bold { font-weight: 700; }
+
+/* Mid-Market */
+.recognition-list { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+.rec-item { font-size: 1.05rem; line-height: 1.5; }
+.rec-problem { font-weight: 700; color: var(--text-dark); margin-right: 0.5rem; }
+.rec-solution { color: var(--text-body); }
+.light-panel { background: #fff; border-radius: 16px; border: 1px solid #e1e4e8; box-shadow: 0 10px 30px rgba(0,0,0,0.05); padding: 2rem; }
+.box-light { background: var(--bg-light); border: 1px solid #e1e4e8; border-radius: 12px; padding: 1.5rem; }
+.box-light .metric-label { color: var(--text-body); }
+.box-light-bar { background: #e1e4e8; }
+.icp-note { margin-top: 4rem; font-size: 0.85rem; color: var(--text-body); font-weight: 500; }
+
+/* Consent Options */
+.trust-pills { gap: 1.5rem; margin-top: 4rem; }
+.trust-pill {
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-weight: 500;
+}
+
+/* Outcomes */
+.disclaimer-note { margin-top: 3rem; font-size: 0.85rem; color: var(--text-body); font-style: italic; }
+
+/* Social Proof */
+.logo-bar { gap: 3rem; align-items: center; margin-top: 3rem; flex-wrap: wrap; }
+.logo-placeholder { background: #cbd5e1; width: 120px; height: 40px; border-radius: 4px; opacity: 0.5; }
+
+/* Footer */
+.light-footer { background: var(--bg-light); border-top: 1px solid #e1e4e8; }
+.light-footer .link-group a:hover { color: var(--primary); }
+
+@media (max-width: 768px) {
+    .stack-diagram { flex-direction: column; }
+    .arrow { transform: rotate(90deg); }
+    .problem-stats.row { flex-direction: column; gap: 1rem; }
+}
+"""
+
+with open('styles.css', 'a') as f:
+    f.write(appended_css)
+
+
+# 3. Update main.js
+with open('main.js', 'r') as f:
+    js_content = f.read()
+
+# Add new selectors for animations
+js_content = js_content.replace("'.square-module, .outcome-card, .testimonial-card, .split-content, .dashboard-widget, .timeline-node'", "'.square-module, .outcome-card, .testimonial-card, .split-content, .dashboard-widget, .timeline-node, .fade-in-up, .light-card'")
+
+# Add mobile menu toggle
+mobile_menu_js = """
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+    if(mobileMenuBtn && mainNav) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('mobile-active');
+        });
+    }
+"""
+
+js_content = js_content.replace("});", mobile_menu_js + "\n});")
+
+with open('main.js', 'w') as f:
+    f.write(js_content)
+
