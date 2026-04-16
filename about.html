@@ -128,11 +128,12 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
         .team-photo-wrapper {
             position: relative;
             width: 100%;
-            aspect-ratio: 3/4;
+            aspect-ratio: 4/5;
             overflow: hidden;
         }
         .team-photo-wrapper img {
@@ -142,18 +143,17 @@
             object-position: center top;
             display: block;
         }
-        .team-photo-wrapper::after {
-            content: '';
+        .team-photo-overlay {
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(45, 123, 191, 0.15);
+            inset: 0;
+            background: rgba(45, 123, 191, 0.2);
             mix-blend-mode: multiply;
             pointer-events: none;
         }
         .team-card-info {
             padding: 1.25rem;
             text-align: left;
-            flex-grow: 1;
+            flex: 1;
         }
         .team-card-info h4 {
             color: #0D1117;
@@ -286,6 +286,7 @@
                 <div class="team-card fade-in-up" style="animation-delay: 0.1s;">
                     <div class="team-photo-wrapper">
                         <img src="brad-headshot.jpg" alt="Brad DiPaolo">
+                        <div class="team-photo-overlay"></div>
                     </div>
                     <div class="team-card-info">
                         <h4>Brad DiPaolo</h4>
@@ -298,6 +299,7 @@
                 <div class="team-card fade-in-up" style="animation-delay: 0.2s;">
                     <div class="team-photo-wrapper">
                         <img src="Stephen McGrath.jpeg" alt="Stephen McGrath">
+                        <div class="team-photo-overlay"></div>
                     </div>
                     <div class="team-card-info">
                         <h4>Stephen McGrath</h4>
@@ -310,6 +312,7 @@
                 <div class="team-card fade-in-up" style="animation-delay: 0.3s;">
                     <div class="team-photo-wrapper">
                         <img src="james-whitelock.jpg" alt="James Whitelock">
+                        <div class="team-photo-overlay"></div>
                     </div>
                     <div class="team-card-info">
                         <h4>James Whitelock</h4>
@@ -322,6 +325,7 @@
                 <div class="team-card fade-in-up" style="animation-delay: 0.4s;">
                     <div class="team-photo-wrapper">
                         <img src="joel-cheesman-photo.png" alt="Joel Cheesman">
+                        <div class="team-photo-overlay"></div>
                     </div>
                     <div class="team-card-info">
                         <h4>Joel Cheesman</h4>
