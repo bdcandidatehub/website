@@ -495,17 +495,17 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: all 0.4s ease;
-    border: 1px solid var(--border-glass);
-    background: rgba(10, 17, 31, 0.4);
+    transition: all 0.25s ease;
+    border: 1px solid rgba(191, 218, 255, 0.15);
+    background: #1C2A3A;
     cursor: pointer;
     overflow: hidden;
 }
 
 .square-module:hover {
-    background: rgba(45, 123, 191, 0.08);
-    border-color: rgba(45, 123, 191, 0.5);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 20px rgba(45, 123, 191, 0.1);
+    background: #FFFFFF;
+    border: 1px solid #BFDAFF;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Lifted light shadow for the white hover card */
 }
 
 /* Corner Brackets */
@@ -556,13 +556,13 @@ a {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    color: var(--primary);
-    transition: all 0.4s ease;
+    color: #2D7BBF;
+    transition: all 0.25s ease;
     opacity: 1;
 }
 
 .square-module:hover .card-icon-wrapper {
-    color: var(--primary);
+    color: #2D7BBF;
     opacity: 1;
     transform: scale(1.1);
 }
@@ -581,9 +581,10 @@ a {
 .card-text h3 {
     font-size: 1.25rem;
     font-weight: 600;
-    transition: color 0.3s;
+    transition: color 0.25s ease;
     margin-bottom: 0.25rem;
     line-height: 1.2;
+    color: #FFFFFF;
 }
 
 .square-module:hover .card-text h3 {
@@ -592,11 +593,11 @@ a {
 
 .card-text p {
     font-size: 0.85rem;
-    color: var(--text-secondary);
+    color: #BFDAFF;
     opacity: 1;
     max-height: none;
     overflow: visible;
-    transition: all 0.4s ease;
+    transition: all 0.25s ease;
     margin-top: 0.5rem;
 }
 
@@ -604,6 +605,7 @@ a {
     opacity: 1;
     max-height: none;
     margin-top: 0.5rem;
+    color: #2D7BBF;
 }
 
 /* Section 3: Lifecycle */
