@@ -1,4 +1,4 @@
-gdocument.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
     // --- Typewriter Effect for Hero Input ---
     const prompts = [
@@ -134,18 +134,11 @@ gdocument.addEventListener('DOMContentLoaded', () => {
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth'
-                
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-                    const mainNav = document.getElementById('mainNav');
-                    if(mobileMenuBtn && mainNav) {
-                    mobileMenuBtn.addEventListener('click', () => {
-                        mainNav.classList.toggle('mobile-active');
-                    });
-                }
+                });
+            }
+        });
+    });
 
-            });
-    }
-        
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mainNav = document.getElementById('mainNav');
     if (mobileMenuBtn && mainNav) {
@@ -153,26 +146,5 @@ gdocument.addEventListener('DOMContentLoaded', () => {
             mainNav.classList.toggle('mobile-active');
         });
     }
-
-});
-
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const mainNav = document.getElementById('mainNav');
-if (mobileMenuBtn && mainNav) {
-    mobileMenuBtn.addEventListener('click', () => {
-        mainNav.classList.toggle('mobile-active');
-    });
-}
-
-});
-
-
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const mainNav = document.getElementById('mainNav');
-if (mobileMenuBtn && mainNav) {
-    mobileMenuBtn.addEventListener('click', () => {
-        mainNav.classList.toggle('mobile-active');
-    });
-}
 
 });

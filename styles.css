@@ -10,6 +10,13 @@
     --border-glass: rgba(191, 218, 255, 0.1); /* Based on secondary: BFDAFF */
     --bg-glass: rgba(45, 123, 191, 0.05); /* Based on primary code: 2D7BBF */
     
+    --bg-light: #ffffff;
+    --bg-offwhite: #F8F9FB;
+    --text-dark: #0D1117;
+    --text-body: #4A5568;
+    --brand-dark-blue: #040812;
+    --brand-blue: #0A111F;
+    
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Outfit', sans-serif;
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -472,7 +479,6 @@ a {
 /* Section 2: Meet Markis */
 .markis-section {
     position: relative;
-    background: linear-gradient(180deg, var(--bg-primary) 0%, #080D1A 100%);
 }
 
 .markis-grid {
@@ -549,10 +555,10 @@ a {
     flex: 1;
     display: flex;
     align-items: flex-start;
-    justify-content: flex-end;
-    color: var(--text-secondary);
+    justify-content: flex-start;
+    color: var(--primary);
     transition: all 0.4s ease;
-    opacity: 0.5;
+    opacity: 1;
 }
 
 .square-module:hover .card-icon-wrapper {
@@ -587,21 +593,21 @@ a {
 .card-text p {
     font-size: 0.85rem;
     color: var(--text-secondary);
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
+    opacity: 1;
+    max-height: none;
+    overflow: visible;
     transition: all 0.4s ease;
+    margin-top: 0.5rem;
 }
 
 .square-module:hover .card-text p {
     opacity: 1;
-    max-height: 80px;
+    max-height: none;
     margin-top: 0.5rem;
 }
 
 /* Section 3: Lifecycle */
 .lifecycle-section {
-    background: var(--bg-primary);
 }
 
 .timeline-container {
@@ -679,7 +685,6 @@ a {
 
 /* Section 4: Mid-Market */
 .midmarket-section {
-    background: #060A14;
 }
 
 .split-layout {
@@ -788,7 +793,6 @@ a {
 
 /* Section 5: Outcomes Grid */
 .outcomes-section {
-    background: var(--bg-primary);
 }
 
 .outcomes-grid {
@@ -888,7 +892,6 @@ a {
 
 /* Testimonials */
 .testimonial-section {
-    background: #060A14;
 }
 
 .testimonial-grid {
@@ -1222,24 +1225,7 @@ a {
     color: var(--primary);
 }
 
-/* Fix .square-module background */
-.light-card.square-module {
-    background: #fff;
-    border: 1px solid #e1e4e8 !important;
-}
-.light-card.square-module:hover {
-    background: #fff !important;
-    border-color: rgba(45, 123, 191, 0.5) !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
-}
-.light-card.square-module .card-text p {
-    color: var(--text-body) !important;
-}
-
-/* Specificity overrides for markis-grid text */
-.markis-grid .card-text h3 { color: var(--text-dark) !important; }
-.markis-grid .light-card:hover .card-text h3 { color: var(--primary) !important; }
-.markis-grid .card-icon-wrapper svg { color: var(--primary) !important; opacity: 1 !important; }
+/* Overrides removed to allow .square-module dark mode styling */
 
 /* Override .dashboard-widget glow */
 .dashboard-widget.light-panel {
