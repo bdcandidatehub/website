@@ -31,5 +31,10 @@ export const postType = defineType({
       type: 'array',
       of: [{type: 'block'}],
     }),
+    defineField({
+      name: 'htmlBody',
+      type: 'text',
+      title: 'HTML Body (Legacy)',
+    }),
   ],
 })

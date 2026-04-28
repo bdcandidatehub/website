@@ -20,24 +20,32 @@ export default async function InsightsPage() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-black text-white pt-32 pb-24 px-6 md:px-12 lg:px-24">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-12">Insights</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="section section-offwhite" style={{ minHeight: '100vh', paddingTop: '160px' }}>
+        <div className="container">
+          <div className="section-header text-center">
+            <h1 className="section-title text-dark">Insights</h1>
+            <p className="section-subtitle text-body">Latest thoughts on hiring, talent, and AI.</p>
+          </div>
+          <div className="markis-grid">
             {posts.map((post: any) => (
               <Link 
                 key={post._id} 
                 href={`/insights/${post.slug}`}
-                className="block bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:border-[#F26430] transition-colors group"
+                className="glass-panel square-module"
+                style={{ textDecoration: 'none', display: 'flex' }}
               >
-                <h2 className="text-xl font-semibold mb-4 group-hover:text-[#F26430] transition-colors">{post.title}</h2>
-                <time className="text-sm text-zinc-400">
-                  {new Date(post.publishedAt).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </time>
+                <div className="card-content">
+                  <div className="card-text text-white">
+                    <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: '#fff' }}>{post.title}</h3>
+                    <time style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>
+                      {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </time>
+                  </div>
+                </div>
               </Link>
             ))}
           </div>

@@ -8,21 +8,21 @@ import Footer from "@/components/Footer";
 // Define the components for PortableText to match the brand styling
 const portableTextComponents = {
   block: {
-    h1: ({ children }: any) => <h1 className="text-4xl font-bold mt-12 mb-6">{children}</h1>,
-    h2: ({ children }: any) => <h2 className="text-3xl font-bold mt-10 mb-5">{children}</h2>,
-    h3: ({ children }: any) => <h3 className="text-2xl font-bold mt-8 mb-4">{children}</h3>,
-    normal: ({ children }: any) => <p className="mb-6 text-lg text-zinc-300 leading-relaxed">{children}</p>,
-    blockquote: ({ children }: any) => <blockquote className="border-l-4 border-[#F26430] pl-4 italic text-zinc-400 my-6">{children}</blockquote>,
+    h1: ({ children }: any) => <h1 style={{ fontSize: '2.5rem', fontWeight: 700, margin: '2rem 0 1rem', color: '#fff' }}>{children}</h1>,
+    h2: ({ children }: any) => <h2 style={{ fontSize: '2rem', fontWeight: 700, margin: '2rem 0 1rem', color: '#fff' }}>{children}</h2>,
+    h3: ({ children }: any) => <h3 style={{ fontSize: '1.5rem', fontWeight: 700, margin: '1.5rem 0 1rem', color: '#fff' }}>{children}</h3>,
+    normal: ({ children }: any) => <p style={{ marginBottom: '1.5rem', fontSize: '1.125rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.7 }}>{children}</p>,
+    blockquote: ({ children }: any) => <blockquote style={{ borderLeft: '4px solid var(--cta-orange)', paddingLeft: '1rem', fontStyle: 'italic', color: 'var(--text-secondary)', margin: '1.5rem 0' }}>{children}</blockquote>,
   },
   list: {
-    bullet: ({ children }: any) => <ul className="list-disc pl-6 mb-6 text-zinc-300 space-y-2 text-lg">{children}</ul>,
-    number: ({ children }: any) => <ol className="list-decimal pl-6 mb-6 text-zinc-300 space-y-2 text-lg">{children}</ol>,
+    bullet: ({ children }: any) => <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem', color: 'rgba(255,255,255,0.8)', listStyleType: 'disc', fontSize: '1.125rem' }}>{children}</ul>,
+    number: ({ children }: any) => <ol style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem', color: 'rgba(255,255,255,0.8)', listStyleType: 'decimal', fontSize: '1.125rem' }}>{children}</ol>,
   },
   marks: {
     link: ({ children, value }: any) => {
       const target = (value?.href || '').startsWith('http') ? '_blank' : undefined;
       return (
-        <a href={value?.href} className="text-[#F26430] hover:underline" target={target} rel={target === '_blank' ? 'noindex nofollow' : ''}>
+        <a href={value?.href} style={{ color: 'var(--cta-orange)', textDecoration: 'underline' }} target={target} rel={target === '_blank' ? 'noindex nofollow' : ''}>
           {children}
         </a>
       );
@@ -51,14 +51,14 @@ export default async function InsightPostPage({ params }: { params: Promise<{ sl
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-black text-white pt-32 pb-24 px-6 md:px-12">
-        <div className="max-w-3xl mx-auto">
-          <Link href="/insights" className="text-[#F26430] hover:underline mb-8 inline-block">
+      <div style={{ minHeight: '100vh', paddingTop: '160px', paddingBottom: '100px', background: 'var(--bg-primary)' }}>
+        <div className="container" style={{ maxWidth: '800px' }}>
+          <Link href="/insights" style={{ color: 'var(--cta-orange)', textDecoration: 'none', marginBottom: '2rem', display: 'inline-block', fontWeight: 500 }}>
             &larr; Back to Insights
           </Link>
-          <header className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">{post.title}</h1>
-            <time className="text-zinc-400">
+          <header style={{ marginBottom: '3rem', borderBottom: '1px solid var(--border-glass)', paddingBottom: '2rem' }}>
+            <h1 style={{ fontSize: '3rem', fontWeight: 700, marginBottom: '1rem', color: '#fff', lineHeight: 1.2 }}>{post.title}</h1>
+            <time style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>
               {new Date(post.publishedAt).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
@@ -66,11 +66,18 @@ export default async function InsightPostPage({ params }: { params: Promise<{ sl
               })}
             </time>
           </header>
-          <div className="prose prose-invert max-w-none">
+          <div className="post-content">
             {post.body ? (
               <PortableText value={post.body} components={portableTextComponents} />
             ) : (
-              <p className="text-zinc-400 italic">This post has no content.</p>
+              // Fallback to local HTML export since Sanity body is empty
+              <div 
+                className="prose prose-invert max-w-none" 
+                style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.125rem', lineHeight: 1.7 }}
+                dangerouslySetInnerHTML={{ 
+                  __html: require('@/data/blogs-html.json').find((b: any) => b.slug === resolvedParams.slug)?.html || '<p style="color: var(--text-secondary); font-style: italic;">This post has no content.</p>'
+                }} 
+              />
             )}
           </div>
         </div>
