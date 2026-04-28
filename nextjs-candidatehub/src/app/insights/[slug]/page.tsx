@@ -2,6 +2,8 @@ import { client } from "@/sanity/client";
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 // Define the components for PortableText to match the brand styling
 const portableTextComponents = {
@@ -47,29 +49,33 @@ export default async function InsightPostPage({ params }: { params: Promise<{ sl
   }
 
   return (
-    <div className="min-h-screen bg-black text-white pt-32 pb-24 px-6 md:px-12">
-      <div className="max-w-3xl mx-auto">
-        <Link href="/insights" className="text-[#F26430] hover:underline mb-8 inline-block">
-          &larr; Back to Insights
-        </Link>
-        <header className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">{post.title}</h1>
-          <time className="text-zinc-400">
-            {new Date(post.publishedAt).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </time>
-        </header>
-        <div className="prose prose-invert max-w-none">
-          {post.body ? (
-            <PortableText value={post.body} components={portableTextComponents} />
-          ) : (
-            <p className="text-zinc-400 italic">This post has no content.</p>
-          )}
+    <>
+      <Header />
+      <div className="min-h-screen bg-black text-white pt-32 pb-24 px-6 md:px-12">
+        <div className="max-w-3xl mx-auto">
+          <Link href="/insights" className="text-[#F26430] hover:underline mb-8 inline-block">
+            &larr; Back to Insights
+          </Link>
+          <header className="mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">{post.title}</h1>
+            <time className="text-zinc-400">
+              {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </time>
+          </header>
+          <div className="prose prose-invert max-w-none">
+            {post.body ? (
+              <PortableText value={post.body} components={portableTextComponents} />
+            ) : (
+              <p className="text-zinc-400 italic">This post has no content.</p>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }
